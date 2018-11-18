@@ -1,4 +1,4 @@
-# CLoudFront WordPress Terraform module
+# CloudFront WordPress Terraform module
 
 [![Help Contribute to Open Source](https://www.codetriage.com/soroushatarod/terraform-cloudfront-wordpress/badges/users.svg)](https://www.codetriage.com/soroushatarod/terraform-cloudfront-wordpress)
 
@@ -36,13 +36,13 @@ Terraform version 0.11.7 or newer is required for this module to work.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| cnames | the custom domain name which you would later on point the cname to  CloudFront DNS name   | string | `false` | yes |
+| cnames | the custom domain name which you would later on point the cname to  CloudFront DNS name   | list | `false` | yes |
 | domain_name | The website root domain name | string | `false` | yes |
 | origin_id | Unique identifer for the origin example: master_origin | string | `false` | yes |
 | acm_certificate_arn | The SSL certificate ARN (Amazon Resource Name). This can be found on the “Certificate Manager” dashboard. | string | `false` | yes |
 | origin_protocol_policy | Either one of them (http-only, https-only,match-viewer) | string | `false` | yes
-| tags | Tags to assign to the distribution | string | `<map>` | yes |
-| cookies_whitelisted_names | List of cookies to be whitelisted. By default has the WordPress cookies | string | `<list>` | no |
+| tags | Tags to assign to the distribution | map | `<map>` | yes |
+| cookies_whitelisted_names | List of cookies to be whitelisted. By default has the WordPress cookies | list | `<list>` | no |
 | http_port | The HTTP port which Cloudfront should connect to the origin | string | 80 | no |
 | https_port | The HTTPS port which Cloudfront should connect to the origin | string | 443 | no |
 | min_ttl | The minimum time you want objects to stay in CloudFront | string | 0 | no |
@@ -64,4 +64,3 @@ Maintained by [Soroush Atarod](https://github.com/soroushatarod). Find out more,
 ## License
 
 Apache 2 Licensed. See LICENSE for full details.
-
